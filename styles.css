@@ -272,7 +272,7 @@ h4 {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 40% 60%;
   height: 100%;
   align-items: center;
 }
@@ -298,9 +298,8 @@ h4 {
 }
 
 .image-right img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: none;
 }
 
 /* Value Proposition */
@@ -320,7 +319,6 @@ h4 {
 
 /* Feature Split */
 #feature-split {
-  height: 520px;
   display: grid;
   grid-template-columns: 58% 42%;
   margin-bottom: 80px;
@@ -384,6 +382,7 @@ h4 {
 
 .beige-panel .meta {
   margin-top: auto;
+  padding-bottom: 8px;
 }
 
 .beige-panel .eyebrow {
