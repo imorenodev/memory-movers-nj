@@ -849,6 +849,13 @@ a:focus {
   position: relative;
   height: 520px;       /* matches your previous left image height */
   overflow: hidden;
+  z-index: 1; /* keep carousel above background */
+  box-shadow: 6px 0 12px rgba(0, 0, 0, 0.15); /* horizontal shadow to the right */
+}
+
+#feature-split.plan-carousel .beige-panel {
+  position: relative;
+  z-index: 0; /* sits under shadow */
 }
 
 #feature-split.plan-carousel .slide{
