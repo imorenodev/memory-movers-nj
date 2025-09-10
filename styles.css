@@ -316,7 +316,8 @@ h4 {
 #feature-split {
   display: grid;
   grid-template-columns: 58% 42%;
-  margin-bottom: 80px;
+  margin: 0 auto 80px auto;
+  max-width: 1200px;
 }
 
 .image-left {
