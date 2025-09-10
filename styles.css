@@ -454,14 +454,46 @@ h4 {
   color: #BEB7B1;
 }
 
-/* Open Appointments - Light Section */
-#open-appointments {
+/* About Section */
+#about {
   background: var(--paper);
   padding: 80px 0;
 }
 
-#open-appointments h3 {
-  margin-bottom: 48px;
+#about .about-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 64px;
+  align-items: start;
+}
+
+#about .about-text h3 {
+  margin-bottom: 32px;
+}
+
+#about .about-bio p {
+  margin-bottom: 24px;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--ash);
+}
+
+#about .credentials {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+#about .credentials .eyebrow {
+  margin-bottom: 8px;
+}
+
+#about .about-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
 /* Property Appraisal */
@@ -711,6 +743,21 @@ a:focus {
     display: flex;
   }
 
+  /* Fix navbar width constraint */
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  /* About section mobile layout */
+  #about .about-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  #about .about-image img {
+    height: 300px;
+  }
+
   /* Hero stacks */
   #hero {
     height: auto;
@@ -797,6 +844,34 @@ a:focus {
   /* Center headings */
   h1, h2, h3 {
     text-align: center;
+  }
+  
+  /* Additional mobile navbar improvements */
+  .nav-container {
+    padding: 0 16px;
+  }
+  
+  .nav-brand img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  /* About section further mobile refinements */
+  #about .about-content {
+    gap: 24px;
+  }
+  
+  #about .about-text h3 {
+    margin-bottom: 24px;
+  }
+  
+  #about .about-bio p {
+    margin-bottom: 20px;
+  }
+  
+  #about .credentials {
+    margin-top: 24px;
+    padding-top: 20px;
   }
   
   #open-appointments h3,
