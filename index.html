@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="media image-right">
-          <img src="assets/images/hero-living-room-boxes.jpg" alt="Beautiful bedroom interior" />
+          <img src="assets/images/hero-living-room-boxes-help.webp" alt="Beautiful bedroom interior" />
         </div>
       </div>
     </div>
@@ -66,19 +66,43 @@
     </div>
   </section>
 
-  <section id="feature-split" class="split">
-    <div class="media image-left">
-      <img src="https://picsum.photos/700/520?random=2" alt="Spacious sunlit living room" />
+  <section id="feature-split" class="split plan-carousel" aria-label="Our 5-Step Plan">
+    <!-- LEFT: carousel with image + H3 overlay -->
+    <div class="media image-left carousel" role="region" aria-live="polite">
+      <figure id="step-1" class="slide is-active" data-step="1">
+        <img src="assets/images/step-1-free-phone-consultation.webp" alt="Phone consultation about goals and timeline">
+        <figcaption class="overlay"><h3>Step 1 — Free Phone Consult</h3></figcaption>
+      </figure>
+      <figure id="step-2" class="slide" data-step="2">
+        <img src="assets/images/step-2-in-home-consultation.webp" alt="In-home assessment with safety-first focus">
+        <figcaption class="overlay"><h3>Step 2 — In-Home Assessment</h3></figcaption>
+      </figure>
+      <figure id="step-3" class="slide" data-step="3">
+        <img src="https://picsum.photos/id/1050/700/520" alt="Sorting items for keep, donate, and sell">
+        <figcaption class="overlay"><h3>Step 3 — Sort, Donate & Sell</h3></figcaption>
+      </figure>
+      <figure id="step-4" class="slide" data-step="4">
+        <img src="https://picsum.photos/id/1008/700/520" alt="Packing and mover coordination">
+        <figcaption class="overlay"><h3>Step 4 — Pack & Move Coordination</h3></figcaption>
+      </figure>
+      <figure id="step-5" class="slide" data-step="5">
+        <img src="https://picsum.photos/id/1011/700/520" alt="New home setup and finishing touches">
+        <figcaption class="overlay"><h3>Step 5 — New Home Setup</h3></figcaption>
+      </figure>
     </div>
+
+    <!-- RIGHT: beige panel with step controls -->
     <aside class="beige-panel">
       <h3>Our 5-Step Plan<br>From call to settled in.</h3>
-      <div class="plan-steps">
-        <div class="step-number">1</div>
-        <div class="step-number">2</div>
-        <div class="step-number">3</div>
-        <div class="step-number">4</div>
-        <div class="step-number">5</div>
+
+      <div class="plan-steps" role="tablist" aria-label="Select a step">
+        <button class="step-number is-active" role="tab" aria-selected="true" aria-controls="step-1" data-step="1" tabindex="0">1</button>
+        <button class="step-number" role="tab" aria-selected="false" aria-controls="step-2" data-step="2" tabindex="-1">2</button>
+        <button class="step-number" role="tab" aria-selected="false" aria-controls="step-3" data-step="3" tabindex="-1">3</button>
+        <button class="step-number" role="tab" aria-selected="false" aria-controls="step-4" data-step="4" tabindex="-1">4</button>
+        <button class="step-number" role="tab" aria-selected="false" aria-controls="step-5" data-step="5" tabindex="-1">5</button>
       </div>
+
       <div class="meta">
         <div class="eyebrow">DESIGNED FOR SENIORS</div>
         <p>Safety-first sorting • Donations & sales handled<br>Packing, move-day support • New-home setup</p>
@@ -94,7 +118,7 @@
       <h3>Featured Services</h3>
       <div class="card-grid">
         <article class="card">
-          <img src="https://picsum.photos/400/300?random=3" alt="Organized room with sorting boxes" />
+          <img src="assets/images/services-1-organizing.webp" alt="Organized room with sorting boxes" />
           <div class="card-content">
             <div class="eyebrow">SERVICE</div>
             <h4>In-Home Sort & Simplify</h4>
@@ -104,7 +128,7 @@
           </div>
         </article>
         <article class="card">
-          <img src="https://picsum.photos/400/300?random=4" alt="Packed moving boxes ready to go" />
+          <img src="assets/images/services-2-moving.webp" alt="Packed moving boxes ready to go" />
           <div class="card-content">
             <div class="eyebrow">SERVICE</div>
             <h4>Move-Ready Package</h4>
@@ -114,7 +138,7 @@
           </div>
         </article>
         <article class="card">
-          <img src="https://picsum.photos/400/300?random=5" alt="Donation boxes and organized items" />
+          <img src="assets/images/services-3-estate-sales.webp" alt="Donation boxes and organized items" />
           <div class="card-content">
             <div class="eyebrow">SERVICE</div>
             <h4>Estate Clear-Out (Lite)</h4>
@@ -167,7 +191,7 @@
 
   <section id="assessment" class="image-banner">
     <div class="banner-bg">
-      <img src="https://picsum.photos/1440/520?random=9" alt="Peaceful senior consultation setting" />
+      <img src="assets/images/helping-seniors-move-1.webp" alt="Peaceful senior consultation setting" />
     </div>
     <div class="container">
       <div class="overlay-card">
@@ -208,7 +232,7 @@
 
   <footer id="footer">
     <div class="footer-hero-image">
-      <img src="https://picsum.photos/1440/220?random=10" alt="Serene desk scene" />
+      <img src="assets/images/helping-seniors-organize-1.webp" alt="Serene desk scene" />
     </div>
     <div class="container">
       <div class="contact-grid">

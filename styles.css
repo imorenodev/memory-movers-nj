@@ -297,11 +297,6 @@ h4 {
   margin-left: auto;
 }
 
-.image-right img {
-  height: 100%;
-  object-fit: none;
-}
-
 /* Value Proposition */
 #value-prop {
   background: var(--paper);
@@ -397,12 +392,12 @@ h4 {
 
 /* Featured Services - Dark Section */
 #featured-services {
-  background: var(--charcoal);
+  background: var(--ivory);
   padding: 80px 0;
 }
 
 #featured-services h3 {
-  color: #EDEAE6;
+  color: var(--bronze);
   margin-bottom: 48px;
 }
 
@@ -841,4 +836,90 @@ a:focus {
     --h3-size: 24px;
     --h3-line: 32px;
   }
+}
+
+/* ===== 5-STEP PLAN CAROUSEL ============================================= */
+:root{
+  --bronze: #9A6A55;
+  --bronze-700:#7E5643;
+}
+
+#feature-split.plan-carousel .carousel{
+  position: relative;
+  height: 520px;       /* matches your previous left image height */
+  overflow: hidden;
+}
+
+#feature-split.plan-carousel .slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease;
+}
+#feature-split.plan-carousel .slide.is-active{
+  opacity: 1;
+  visibility: visible;
+}
+
+#feature-split.plan-carousel .slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Elegant H3 overlay with bottom scrim for legibility */
+#feature-split.plan-carousel .slide .overlay{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 18px 20px 22px;
+  background: linear-gradient(0deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 60%);
+  color: #fff;
+  pointer-events: none;
+}
+#feature-split.plan-carousel .slide .overlay h3{
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.2;
+}
+
+/* Number buttons in the beige panel become real tabs */
+#feature-split.plan-carousel .plan-steps{
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+#feature-split.plan-carousel .step-number{
+  width: 40px; height: 40px;
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--bronze);
+  background: transparent;
+  color: var(--bronze);
+  font: 600 14px/1 "Inter", system-ui, sans-serif;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+#feature-split.plan-carousel .step-number:hover,
+#feature-split.plan-carousel .step-number:focus{
+  border-color: var(--bronze-700);
+  box-shadow: 0 0 0 3px rgba(154,106,85,.18);
+  outline: none;
+}
+#feature-split.plan-carousel .step-number.is-active,
+#feature-split.plan-carousel .step-number[aria-selected="true"]{
+  background: var(--bronze);
+  color: #fff;
+  border-color: var(--bronze);
+  box-shadow: 0 0 0 3px rgba(154,106,85,.22);
+}
+
+/* Responsive tweak */
+@media (max-width: 900px){
+  #feature-split.plan-carousel .carousel{ height: 420px; }
 }

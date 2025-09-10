@@ -139,3 +139,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+/* ===== 5-STEP PLAN CAROUSEL (tabs + clicks + arrows + swipe) ============ */
+(() => {
+  const root = document.querySelector('#feature-split.plan-carousel');
+  if (!root) return;
+
+  const tabs = Array.from(root.querySelectorAll('.step-number'));
+  const slides = Array.from(root.querySelectorAll('.slide'));
+  const carousel = root.querySelector('.carousel');
+
+  function activate(step) {
+    const targetId = `step-${step}`;
+    slides.forEach(s => s.classList.toggle('is-active', s.id === targetId));
+    tabs.forEach(btn => {
+      const isActive = btn.dataset.step === String(step);
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      btn.tabIndex = isActive ? 0 : -1;
+    });
+  }
+
+  // Click
+  tabs.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.step)));
+
+  // Keyboard (arrow keys on the active tab)
+  tabs.forEach((btn, i) => {
+    btn.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = e.key === 'ArrowRight' ? (i + 1) % tabs.length : (i - 1 + tabs.length) % tabs.length;
+      tabs[next].focus();
+      activate(tabs[next].dataset.step);
+    });
+  });
+
+  // Basic swipe (pointer) on the image for mobile
+  let startX = null;
+  carousel.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+  carousel.addEventListener('pointerup', (e) => {
+    if (startX == null) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 40) {
+      const activeIndex = tabs.findIndex(b => b.classList.contains('is-active'));
+      const nextIndex = dx < 0 ? (activeIndex + 1) % tabs.length : (activeIndex - 1 + tabs.length) % tabs.length;
+      activate(tabs[nextIndex].dataset.step);
+      tabs[nextIndex].focus();
+    }
+    startX = null;
+  });
+
+  // Ensure first state is correct on load
+  activate(1);
+})();
