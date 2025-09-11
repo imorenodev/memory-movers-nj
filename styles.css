@@ -498,8 +498,8 @@ h4 {
   box-shadow: var(--shadow);
 }
 
-/* Property Appraisal */
-#appraisal {
+/* Assessment Section */
+#assessment {
   height: 520px;
   position: relative;
   overflow: hidden;
@@ -520,7 +520,7 @@ h4 {
   object-fit: cover;
 }
 
-#appraisal .container {
+#assessment .container {
   position: relative;
   z-index: 2;
   height: 100%;
@@ -829,7 +829,7 @@ a:focus {
   }
   
   /* Overlay card becomes banner */
-  #appraisal .container {
+  #assessment .container {
     align-items: center;
     justify-content: center;
     padding-top: 0;
