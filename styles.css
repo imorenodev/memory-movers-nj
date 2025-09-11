@@ -299,7 +299,6 @@ h4 {
   height: 560px;
   position: relative;
   margin-left: auto;
-  box-shadow: -6px 0 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Value Proposition */
@@ -322,7 +321,6 @@ h4 {
   display: grid;
   grid-template-columns: 58% 42%;
   margin: 0 auto 80px auto;
-  max-width: 1200px;
 }
 
 .image-left {
@@ -496,12 +494,12 @@ h4 {
 #about .about-image img {
   width: 100%;
   height: 500px;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: var(--shadow);
 }
 
-/* Property Appraisal */
-#appraisal {
+/* Assessment Section */
+#assessment {
   height: 520px;
   position: relative;
   overflow: hidden;
@@ -522,7 +520,7 @@ h4 {
   object-fit: cover;
 }
 
-#appraisal .container {
+#assessment .container {
   position: relative;
   z-index: 2;
   height: 100%;
@@ -647,11 +645,6 @@ h4 {
 .contact-link:focus {
   color: var(--graphite);
   text-decoration: underline;
-}
-
-.phone-link {
-  font-size: 18px;
-  font-weight: 600;
 }
 
 .email-link {
@@ -836,7 +829,7 @@ a:focus {
   }
   
   /* Overlay card becomes banner */
-  #appraisal .container {
+  #assessment .container {
     align-items: center;
     justify-content: center;
     padding-top: 0;
@@ -909,6 +902,11 @@ a:focus {
   #about .credentials {
     margin-top: 24px;
     padding-top: 20px;
+  }
+  
+  /* Center short dividers on mobile */
+  .short {
+    margin: 0 auto 24px auto;
   }
   
   #open-appointments h3,
