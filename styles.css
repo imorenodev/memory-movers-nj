@@ -516,10 +516,7 @@ h4 {
 }
 
 #about .about-content {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 64px;
-  align-items: start;
+  position: relative;
 }
 
 #about .about-text h3 {
@@ -541,6 +538,13 @@ h4 {
 
 #about .credentials .eyebrow {
   margin-bottom: 8px;
+}
+
+#about .about-image {
+  float: right;
+  width: 400px;
+  margin-left: 32px;
+  margin-bottom: 24px;
 }
 
 #about .about-image img {
@@ -849,13 +853,10 @@ a:focus {
   }
 
   /* About section mobile layout */
-  #about .about-content {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  
   #about .about-image {
-    order: -1;
+    float: none;
+    width: 100%;
+    margin: 0 0 32px 0;
   }
   
   #about .about-image img {
@@ -1035,8 +1036,8 @@ a:focus {
   }
   
   /* About section further mobile refinements */
-  #about .about-content {
-    gap: 24px;
+  #about .about-image {
+    margin-bottom: 24px;
   }
   
   #about .about-text h3 {
