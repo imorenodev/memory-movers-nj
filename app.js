@@ -23,20 +23,58 @@ document.addEventListener('DOMContentLoaded', function() {
   // Close mobile menu when clicking on a nav link
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
-      navToggle.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.style.overflow = '';
+      // Don't close menu for dropdown toggles
+      if (!this.classList.contains('dropdown-toggle')) {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     });
   });
 
-  // Close mobile menu when clicking outside
+  // Dropdown functionality
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const dropdown = this.parentElement;
+      const isActive = dropdown.classList.contains('active');
+      
+      // Close all other dropdowns
+      dropdowns.forEach(d => d.classList.remove('active'));
+      
+      // Toggle current dropdown
+      if (!isActive) {
+        dropdown.classList.add('active');
+      }
+    });
+  });
+
+  // Close mobile menu and dropdowns when clicking outside
   document.addEventListener('click', function(e) {
+    // Close mobile menu
     if (navMenu.classList.contains('active') && 
         !navMenu.contains(e.target) && 
         !navToggle.contains(e.target)) {
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
       document.body.style.overflow = '';
+    }
+    
+    // Close dropdowns
+    let clickedInsideDropdown = false;
+    dropdowns.forEach(dropdown => {
+      if (dropdown.contains(e.target)) {
+        clickedInsideDropdown = true;
+      }
+    });
+    
+    if (!clickedInsideDropdown) {
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
     }
   });
 
@@ -138,6 +176,183 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Reviews Carousel Functionality
+  const reviewsCarousel = document.querySelector('.reviews-carousel');
+  if (reviewsCarousel) {
+    const carouselContainer = reviewsCarousel.querySelector('.carousel-container');
+    const track = reviewsCarousel.querySelector('.reviews-track');
+    const slides = reviewsCarousel.querySelectorAll('.review-slide');
+    const prevBtn = reviewsCarousel.querySelector('.prev-btn');
+    const nextBtn = reviewsCarousel.querySelector('.next-btn');
+    const dots = reviewsCarousel.querySelectorAll('.dot');
+    
+    let currentSlide = 0;
+    let autoplayInterval;
+    
+    function updateCarousel() {
+      // Update slides
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+      
+      // Update dots
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+      
+      // Update container height to match active slide
+      setTimeout(() => {
+        const activeSlide = slides[currentSlide];
+        if (activeSlide) {
+          const slideHeight = activeSlide.scrollHeight;
+          carouselContainer.style.height = slideHeight + 'px';
+        }
+      }, 50); // Small delay to ensure content is rendered
+      
+      // Update button states
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === slides.length - 1;
+    }
+    
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateCarousel();
+      }
+    }
+    
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+      }
+    }
+    
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+    
+    function startAutoplay() {
+      // Always clear any existing interval first
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+        autoplayInterval = null;
+      }
+      
+      autoplayInterval = setInterval(() => {
+        if (currentSlide < slides.length - 1) {
+          nextSlide();
+        } else {
+          currentSlide = 0;
+          updateCarousel();
+        }
+      }, 8000); // 8 seconds per slide
+    }
+    
+    function stopAutoplay() {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+        autoplayInterval = null;
+      }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+      stopAutoplay();
+      nextSlide();
+      // Delay restart to prevent rapid clicking issues
+      setTimeout(() => {
+        startAutoplay();
+      }, 100);
+    });
+    
+    prevBtn.addEventListener('click', () => {
+      stopAutoplay();
+      prevSlide();
+      // Delay restart to prevent rapid clicking issues
+      setTimeout(() => {
+        startAutoplay();
+      }, 100);
+    });
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopAutoplay();
+        goToSlide(index);
+        // Delay restart to prevent rapid clicking issues
+        setTimeout(() => {
+          startAutoplay();
+        }, 100);
+      });
+    });
+    
+    // Touch/swipe support
+    let startX = null;
+    let startY = null;
+    
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+    
+    track.addEventListener('touchend', (e) => {
+      if (startX === null || startY === null) return;
+      
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
+      
+      // Only handle horizontal swipes
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+        stopAutoplay();
+        if (deltaX > 0) {
+          prevSlide();
+        } else {
+          nextSlide();
+        }
+        // Delay restart to prevent rapid swiping issues
+        setTimeout(() => {
+          startAutoplay();
+        }, 100);
+      }
+      
+      startX = null;
+      startY = null;
+    });
+    
+    // Pause autoplay on hover
+    reviewsCarousel.addEventListener('mouseenter', stopAutoplay);
+    reviewsCarousel.addEventListener('mouseleave', startAutoplay);
+    
+    // Keyboard navigation
+    reviewsCarousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        stopAutoplay();
+        nextSlide();
+        setTimeout(() => {
+          startAutoplay();
+        }, 100);
+      } else if (e.key === 'ArrowLeft') {
+        stopAutoplay();
+        prevSlide();
+        setTimeout(() => {
+          startAutoplay();
+        }, 100);
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      updateCarousel();
+    });
+    
+    // Initialize carousel
+    updateCarousel();
+    startAutoplay();
+  }
 });
 
 /* ===== 5-STEP PLAN CAROUSEL (tabs + clicks + arrows + swipe) ============ */
