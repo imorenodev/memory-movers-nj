@@ -235,6 +235,72 @@ h4 {
   border-radius: 2px;
 }
 
+/* Dropdown Menu Styles */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 10px;
+  margin-left: 4px;
+  transition: transform 160ms ease;
+}
+
+.nav-dropdown:hover .dropdown-toggle::after,
+.nav-dropdown.active .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px var(--shadow);
+  min-width: 200px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 8px 0 0 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 160ms ease;
+  z-index: 1000;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--graphite);
+  text-decoration: none;
+  font-size: var(--small-size);
+  font-weight: 500;
+  transition: background-color 160ms ease;
+  border-radius: 0;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  background-color: var(--sand);
+  color: var(--bronze);
+  outline: none;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -842,6 +908,39 @@ a:focus {
     font-size: var(--body-size);
     border-bottom: none;
   }
+
+  /* Mobile dropdown styles */
+  .nav-dropdown .dropdown-toggle::after {
+    float: right;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    background: var(--sand);
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease;
+  }
+  
+  .nav-dropdown.active .dropdown-menu {
+    max-height: 200px;
+  }
+  
+  .dropdown-menu li a {
+    padding: 16px 48px;
+    font-size: var(--small-size);
+    background: var(--sand);
+  }
+  
+  .dropdown-menu li a:hover {
+    background: var(--beige);
+  }
   
   .nav-toggle {
     display: flex;
@@ -1414,7 +1513,6 @@ a:focus {
 }
 
 .donation-item p {
-  color: #EDEAE6;
   margin-bottom: 8px;
 }
 
@@ -1539,10 +1637,13 @@ a:focus {
 
 /* Dark section adjustments for new pages */
 .dark h2 {
-  color: #EDEAE6;
   text-align: center;
-  margin-bottom: 48px;
+  margin-top: 48px;
   font-size: 32px;
+}
+
+#remove-section {
+  margin-bottom: 60px;
 }
 
 /* Responsive Design for New Pages */
