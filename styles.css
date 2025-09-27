@@ -472,11 +472,21 @@ h4 {
 
 /* Featured Services - Dark Section */
 #featured-services {
-  background: var(--ivory);
+  background: var(--paper);
   padding: 80px 0;
 }
 
 #featured-services h3 {
+  color: var(--bronze);
+  margin-bottom: 48px;
+}
+
+#what-i-do {
+  background: var(--ivory);
+  padding: 80px 0;
+}
+
+#what-i-do h3 {
   color: var(--bronze);
   margin-bottom: 48px;
 }
@@ -623,6 +633,14 @@ h4 {
   color: #BEB7B1;
 }
 
+#what-i-do .card h4 {
+  color: var(--graphite);
+}
+
+#what-i-do .card .eyebrow {
+  color: #BEB7B1;
+}
+
 /* About Section */
 #about {
   background: var(--paper);
@@ -722,7 +740,7 @@ h4 {
 /* Service & Pricing Comparison */
 #pricing {
   background: var(--ivory);
-  margin-bottom: 80px;
+  margin: 80px 0 80px 0;
 }
 
 #pricing h3 {
@@ -940,6 +958,48 @@ h4 {
 /* Footer */
 #footer {
   background: var(--paper);
+}
+
+.footer-nav {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  max-width: 600px;
+}
+
+.footer-nav-column h4 {
+  font-family: var(--sans);
+  font-size: var(--small-size);
+  font-weight: 500;
+  color: var(--graphite);
+  margin-bottom: 16px;
+}
+
+.footer-nav-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-column li {
+  margin-bottom: 8px;
+}
+
+.footer-nav-column a {
+  color: var(--ash);
+  text-decoration: none;
+  font-size: var(--small-size);
+  transition: color 160ms ease;
+}
+
+.footer-nav-column a:hover {
+  color: var(--bronze);
 }
 
 .footer-hero-image {
@@ -1375,6 +1435,12 @@ a:focus {
     gap: 16px;
   }
   
+  /* Footer navigation mobile */
+  .footer-navigation {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
   /* Center headings */
   h1, h2, h3 {
     text-align: center;
@@ -1414,7 +1480,8 @@ a:focus {
   }
   
   #open-appointments h3,
-  #featured-services h3 {
+  #featured-services h3,
+  #what-i-do h3 {
     text-align: left;
   }
   
