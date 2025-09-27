@@ -20,6 +20,7 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#featured-services">Services</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li class="nav-dropdown">
           <a href="#" class="dropdown-toggle">Resources</a>
           <ul class="dropdown-menu">
@@ -329,6 +330,113 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="container">
+      <h3>Frequently Asked Questions</h3>
+      
+      <div class="faq-accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What services do you offer?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p>I offer four main services: <strong>Consignment Pickup</strong> (for items ready to sell), <strong>Clean Out/Clear Out</strong> (for storage units and garages), <strong>Consultative Decluttering</strong> (working side by side), and <strong>Estate Sales</strong> (full-service sales for whole homes). Each service includes selling items and splitting proceeds 50/50, except estate sales which are 35/65.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How much do your services cost?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p><strong>Consignment Pickup:</strong> No upfront fee, 50/50 split on sales<br>
+              <strong>Clean Out/Clear Out:</strong> $65/hour + 50/50 split on sales<br>
+              <strong>Consultative Decluttering:</strong> $95/hour + 50/50 split on sales<br>
+              <strong>Estate Sales:</strong> $1 per sq. ft. + 35/65 split on proceeds</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Do you offer a free consultation?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p>Yes! I offer a free home and belongings assessment where we'll walk your space, discuss your goals, flag any safety risks, and create a timeline you're comfortable with. There's no pressure and no obligation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What happens to items that don't sell?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p>I believe nothing should go to waste unnecessarily. Items that don't sell are donated to appropriate organizations, recycled through proper channels, or disposed of responsibly. I maintain extensive lists of local donation centers and recycling programs in New Jersey to ensure your belongings find new homes where they'll be appreciated.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How long does the process take?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p>The timeline depends on your needs and comfort level. I work at your pace—this process can be emotional, and I respect that. Some clients prefer to work a few hours at a time over several months, while others want to tackle everything quickly. We'll create a timeline during your free assessment that feels right for you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What areas do you serve?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p>I serve New Jersey and surrounding areas. Having lived in New Jersey for nearly 20 years, I have extensive knowledge of local donation centers, recycling programs, and resale opportunities throughout the region.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Will you judge me for the state of my space?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p>Absolutely not. I understand that everyone's situation is unique, and there's no shame in needing help organizing your space. We all accumulate things over time. My approach is completely judgment-free and compassionate—I'm here to help, not to judge.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>How do you handle sentimental items?</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="faq-answer">
+              <p>I understand that it's not the objects themselves that matter most—it's the memories they hold. I help you identify what truly matters and find meaningful ways to preserve those memories. We work together to decide what to keep, what to share with family, and what to let go of, always honoring the stories behind your belongings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer id="footer">
     <div class="container">
       <div class="contact-grid">
@@ -390,6 +498,7 @@
               <li><a href="#hero">Home</a></li>
               <li><a href="#featured-services">Services</a></li>
               <li><a href="about.html">About</a></li>
+              <li><a href="#faq">FAQ</a></li>
               <li><a href="#reviews">Reviews</a></li>
             </ul>
           </div>
@@ -406,5 +515,47 @@
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    // FAQ Accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+      
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const accordionItem = this.parentElement;
+          const accordionContent = accordionItem.querySelector('.accordion-content');
+          const accordionIcon = this.querySelector('.accordion-icon');
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other accordion items
+          accordionHeaders.forEach(otherHeader => {
+            if (otherHeader !== this) {
+              const otherItem = otherHeader.parentElement;
+              const otherContent = otherItem.querySelector('.accordion-content');
+              const otherIcon = otherHeader.querySelector('.accordion-icon');
+              
+              otherHeader.setAttribute('aria-expanded', 'false');
+              otherContent.style.maxHeight = null;
+              otherIcon.textContent = '+';
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current accordion item
+          if (isExpanded) {
+            this.setAttribute('aria-expanded', 'false');
+            accordionContent.style.maxHeight = null;
+            accordionIcon.textContent = '+';
+            accordionItem.classList.remove('active');
+          } else {
+            this.setAttribute('aria-expanded', 'true');
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            accordionIcon.textContent = '−';
+            accordionItem.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
