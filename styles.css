@@ -597,7 +597,6 @@ h4 {
 }
 
 .process-label {
-  color: #EDEAE6;
   font-family: var(--serif);
   font-size: 20px;
   font-weight: 500;
@@ -1448,10 +1447,15 @@ a:focus {
     grid-template-columns: 1fr;
     gap: 32px;
     margin-top: 32px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .process-image img {
-    height: 180px;
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
   }
 
   /* Typography scaling */
