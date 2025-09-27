@@ -1981,3 +1981,161 @@ a:focus {
     padding: 60px 0;
   }
 }
+
+/* About Page Specific Styles */
+#about-story {
+  background: var(--paper);
+  padding: 80px 0;
+}
+
+.about-content {
+  position: relative;
+}
+
+.about-image {
+  float: right;
+  width: 400px;
+  margin-left: 32px;
+  margin-bottom: 24px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+  box-shadow: var(--shadow);
+}
+
+.about-text h3 {
+  margin-bottom: 32px;
+}
+
+.about-bio p {
+  margin-bottom: 24px;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--ash);
+}
+
+#philosophy {
+  padding: 96px 0;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.philosophy-item {
+  text-align: center;
+}
+
+.philosophy-item h4 {
+  color: #EDEAE6;
+  font-family: var(--serif);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.philosophy-item p {
+  color: var(--ash);
+  line-height: 1.6;
+}
+
+#credentials {
+  background: var(--ivory);
+  padding: 96px 0;
+}
+
+.credentials-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.credential-item h4 {
+  color: var(--bronze);
+  font-family: var(--serif);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.credential-item p {
+  color: var(--ash);
+  line-height: 1.6;
+}
+
+.centered-content {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.centered-content h3 {
+  margin-bottom: 24px;
+}
+
+/* About Page Mobile Responsive */
+@media (max-width: 992px) {
+  .philosophy-grid,
+  .credentials-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .about-image {
+    float: none;
+    width: 100%;
+    margin: 0 0 32px 0;
+  }
+  
+  .about-image img {
+    height: 300px;
+  }
+  
+  #about-story,
+  #philosophy,
+  #credentials {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .philosophy-grid,
+  .credentials-content {
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .about-image {
+    margin-bottom: 24px;
+  }
+  
+  .about-text h3 {
+    margin-bottom: 24px;
+  }
+  
+  .about-bio p {
+    margin-bottom: 20px;
+  }
+  
+  #about-story,
+  #philosophy,
+  #credentials {
+    padding: 60px 0;
+  }
+  
+  .philosophy-item,
+  .credential-item {
+    text-align: left;
+  }
+}
