@@ -472,11 +472,21 @@ h4 {
 
 /* Featured Services - Dark Section */
 #featured-services {
-  background: var(--ivory);
+  background: var(--paper);
   padding: 80px 0;
 }
 
 #featured-services h3 {
+  color: var(--bronze);
+  margin-bottom: 48px;
+}
+
+#what-i-do {
+  background: var(--ivory);
+  padding: 80px 0;
+}
+
+#what-i-do h3 {
   color: var(--bronze);
   margin-bottom: 48px;
 }
@@ -561,6 +571,50 @@ h4 {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
+/* Process Images - Before, During, After */
+.process-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process-item {
+  text-align: center;
+}
+
+.process-image {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.process-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+
+.process-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.process-label {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .pricing-heading {
   color: var(--paper);
   font-family: var(--serif);
@@ -576,6 +630,14 @@ h4 {
 }
 
 #featured-services .card .eyebrow {
+  color: #BEB7B1;
+}
+
+#what-i-do .card h4 {
+  color: var(--graphite);
+}
+
+#what-i-do .card .eyebrow {
   color: #BEB7B1;
 }
 
@@ -678,7 +740,7 @@ h4 {
 /* Service & Pricing Comparison */
 #pricing {
   background: var(--ivory);
-  margin-bottom: 80px;
+  margin: 80px 0 80px 0;
 }
 
 #pricing h3 {
@@ -896,6 +958,48 @@ h4 {
 /* Footer */
 #footer {
   background: var(--paper);
+}
+
+.footer-nav {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  max-width: 600px;
+}
+
+.footer-nav-column h4 {
+  font-family: var(--sans);
+  font-size: var(--small-size);
+  font-weight: 500;
+  color: var(--graphite);
+  margin-bottom: 16px;
+}
+
+.footer-nav-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-column li {
+  margin-bottom: 8px;
+}
+
+.footer-nav-column a {
+  color: var(--ash);
+  text-decoration: none;
+  font-size: var(--small-size);
+  transition: color 160ms ease;
+}
+
+.footer-nav-column a:hover {
+  color: var(--bronze);
 }
 
 .footer-hero-image {
@@ -1331,6 +1435,12 @@ a:focus {
     gap: 16px;
   }
   
+  /* Footer navigation mobile */
+  .footer-navigation {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
   /* Center headings */
   h1, h2, h3 {
     text-align: center;
@@ -1370,7 +1480,8 @@ a:focus {
   }
   
   #open-appointments h3,
-  #featured-services h3 {
+  #featured-services h3,
+  #what-i-do h3 {
     text-align: left;
   }
   
@@ -1398,6 +1509,22 @@ a:focus {
     width: calc(100% - 40px);
   }
   
+  /* Process images mobile - stack vertically */
+  .process-images {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 32px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .process-image img {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+  }
+
   /* Typography scaling */
   :root {
     --h1-size: 48px;
@@ -1919,5 +2046,163 @@ a:focus {
   #email-signup,
   #image-gallery {
     padding: 60px 0;
+  }
+}
+
+/* About Page Specific Styles */
+#about-story {
+  background: var(--paper);
+  padding: 80px 0;
+}
+
+.about-content {
+  position: relative;
+}
+
+.about-image {
+  float: right;
+  width: 400px;
+  margin-left: 32px;
+  margin-bottom: 24px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+  box-shadow: var(--shadow);
+}
+
+.about-text h3 {
+  margin-bottom: 32px;
+}
+
+.about-bio p {
+  margin-bottom: 24px;
+  font-size: var(--body-size);
+  line-height: var(--body-line);
+  color: var(--ash);
+}
+
+#philosophy {
+  padding: 96px 0;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.philosophy-item {
+  text-align: center;
+}
+
+.philosophy-item h4 {
+  color: #EDEAE6;
+  font-family: var(--serif);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.philosophy-item p {
+  color: var(--ash);
+  line-height: 1.6;
+}
+
+#credentials {
+  background: var(--ivory);
+  padding: 96px 0;
+}
+
+.credentials-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.credential-item h4 {
+  color: var(--bronze);
+  font-family: var(--serif);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.credential-item p {
+  color: var(--ash);
+  line-height: 1.6;
+}
+
+.centered-content {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.centered-content h3 {
+  margin-bottom: 24px;
+}
+
+/* About Page Mobile Responsive */
+@media (max-width: 992px) {
+  .philosophy-grid,
+  .credentials-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .about-image {
+    float: none;
+    width: 100%;
+    margin: 0 0 32px 0;
+  }
+  
+  .about-image img {
+    height: 300px;
+  }
+  
+  #about-story,
+  #philosophy,
+  #credentials {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .philosophy-grid,
+  .credentials-content {
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .about-image {
+    margin-bottom: 24px;
+  }
+  
+  .about-text h3 {
+    margin-bottom: 24px;
+  }
+  
+  .about-bio p {
+    margin-bottom: 20px;
+  }
+  
+  #about-story,
+  #philosophy,
+  #credentials {
+    padding: 60px 0;
+  }
+  
+  .philosophy-item,
+  .credential-item {
+    text-align: left;
   }
 }
