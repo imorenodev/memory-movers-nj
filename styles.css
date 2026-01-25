@@ -2234,3 +2234,99 @@ a:focus {
     text-align: left;
   }
 }
+
+/* Promo Banner Styles - Theme Matched */
+.promo-banner {
+  /* We use your bronze variables for a rich, warm gradient */
+  background: linear-gradient(to right, var(--bronze), var(--bronze-700)); 
+  color: var(--paper);
+  padding: 12px 40px 12px 20px;
+  position: relative;
+  width: 100%;
+  z-index: 1001; /* Sits on top of navbar (which is 1000) */
+  font-family: var(--sans); /* Matches your Inter font */
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: margin-top 0.3s ease;
+}
+
+.promo-banner.hidden {
+  display: none;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.banner-text {
+  font-weight: 400;
+  opacity: 1;
+}
+
+.banner-btn {
+  /* Semi-transparent white to blend with bronze */
+  background-color: rgba(255, 255, 255, 0.15); 
+  color: var(--paper);
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: 2px; /* Squared off slightly to match your theme buttons */
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.banner-btn:hover {
+  background-color: var(--paper);
+  color: var(--bronze);
+  border-color: var(--paper);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.banner-close {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.banner-close:hover {
+  color: var(--paper);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .promo-banner {
+    padding: 15px 40px 15px 15px;
+  }
+  
+  .banner-content {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .banner-close {
+    top: 15px;
+    transform: none;
+  }
+}
