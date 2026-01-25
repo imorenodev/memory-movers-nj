@@ -10,6 +10,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="promo-banner" class="promo-banner">
+    <div class="banner-content">
+      <span class="banner-text">Find unique treasures from our latest projects.</span>
+      <a href="https://memory-movers-nj.myshopify.com/" target="_blank" class="banner-btn">
+        Want to shop items? &rarr;
+      </a>
+    </div>
+    <button id="close-banner" class="banner-close" aria-label="Close banner">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-brand">
@@ -19,6 +31,7 @@
       <ul class="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="#featured-services">Services</a></li>
+        <li><a href="https://memory-movers-nj.myshopify.com/" target="_blank">Shop Items</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li class="nav-dropdown">
@@ -497,6 +510,7 @@
             <ul>
               <li><a href="#hero">Home</a></li>
               <li><a href="#featured-services">Services</a></li>
+              <li><a href="https://memory-movers-nj.myshopify.com/" target="_blank">Shop Items</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#reviews">Reviews</a></li>
@@ -555,6 +569,23 @@
           }
         });
       });
+      
+      // Banner Logic
+      const banner = document.getElementById('promo-banner');
+      const closeBannerBtn = document.getElementById('close-banner');
+
+      // Check if user previously closed the banner in this session
+      if (sessionStorage.getItem('bannerClosed') === 'true') {
+        banner.style.display = 'none';
+      }
+
+      if (closeBannerBtn) {
+        closeBannerBtn.addEventListener('click', function() {
+          banner.style.display = 'none';
+          // Save preference to session storage
+          sessionStorage.setItem('bannerClosed', 'true');
+        });
+      }
     });
   </script>
 </body>
