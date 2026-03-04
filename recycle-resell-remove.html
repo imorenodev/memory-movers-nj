@@ -11,38 +11,42 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+  <header>
+  <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
       <div class="nav-brand">
         <a href="index.html">
-          <img src="assets/images/logo.svg" alt="Memory Movers NJ Logo" width="80" height="80" />
+          <img src="assets/images/logo.svg" alt="Memory Movers NJ - Home" width="80" height="80" />
         </a>
       </div>
-      
-      <ul class="nav-menu">
-        <li><a href="index.html#hero">Home</a></li>
-        <li><a href="index.html#featured-services">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-        <li class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">Resources</a>
-          <ul class="dropdown-menu">
-            <li><a href="recycle-resell-remove.html">Recycle / Resell / Remove</a></li>
-            <li><a href="donations.html">Donation Locations</a></li>
+
+      <ul class="nav-menu" id="main-nav" role="menubar">
+        <li role="none"><a href="index.html#hero" role="menuitem">Home</a></li>
+        <li role="none"><a href="index.html#featured-services" role="menuitem">Services</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html#faq" role="menuitem">FAQ</a></li>
+        <li class="nav-dropdown" role="none">
+          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Resources</a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="recycle-resell-remove.html" role="menuitem" aria-current="page">Recycle / Resell / Remove</a></li>
+            <li role="none"><a href="donations.html" role="menuitem">Donation Locations</a></li>
           </ul>
         </li>
-        <li><a href="index.html#reviews">Reviews</a></li>
-        <li><a href="index.html#footer">Contact</a></li>
+        <li role="none"><a href="index.html#reviews" role="menuitem">Reviews</a></li>
+        <li role="none"><a href="index.html#footer" role="menuitem">Contact</a></li>
       </ul>
-      
-      <div class="nav-toggle">
+
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-      </div>
+      </button>
     </div>
   </nav>
+  </header>
 
+  <main id="main-content">
   <section id="hero-page" class="centered">
     <div class="container">
       <h1>How to </br>Recycle / Resell / Remove </br>in New Jersey</h1>
@@ -286,12 +290,13 @@
   <section id="email-signup" class="centered">
     <div class="container">
       <div class="signup-content">
-        <h3>Want My List of 5 Easy Things To Declutter Your Home Today?</h3>
+        <h2 class="h3">Want My List of 5 Easy Things To Declutter Your Home Today?</h2>
         <p>Enter your email below to subscribe and receive my free decluttering list. I'll add you to my monthly newsletter where I share organizing tips and promotions.</p>
-        
+
         <form class="email-form" action="#" method="post">
           <div class="form-row">
-            <input type="email" name="email" placeholder="Enter your email address" required class="email-input">
+            <label for="email-recycle" class="sr-only">Email address</label>
+            <input type="email" name="email" id="email-recycle" placeholder="Enter your email address" required class="email-input" autocomplete="email">
             <button type="submit" class="btn outline">SUBSCRIBE</button>
           </div>
           <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
@@ -300,9 +305,11 @@
     </div>
   </section>
 
+  </main>
+
   <footer id="footer">
     <div class="footer-hero-image">
-      <img src="assets/images/helping-seniors-organize-1.webp" alt="Serene desk scene" />
+      <img src="assets/images/helping-seniors-organize-1.webp" alt="Organized desk with supplies" />
     </div>
     <div class="container">
       <div class="contact-grid">
@@ -357,7 +364,7 @@
         </div>
       </div>
       <div class="footer-nav">
-        <nav class="footer-navigation">
+        <nav class="footer-navigation" aria-label="Footer navigation">
           <div class="footer-nav-column">
             <h4>Navigation</h4>
             <ul>
@@ -373,6 +380,8 @@
             <ul>
               <li><a href="recycle-resell-remove.html">Recycle / Resell / Remove</a></li>
               <li><a href="donations.html">Donation Locations</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+              <li><a href="mailto:gwen@memorymoversnj.com">Report Accessibility Issue</a></li>
             </ul>
           </div>
         </nav>

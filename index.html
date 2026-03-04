@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="promo-banner" class="promo-banner">
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+  <div id="promo-banner" class="promo-banner" role="complementary" aria-label="Promotional banner">
     <div class="banner-content">
       <span class="banner-text">Sustainable shopping. One-of-a-kind finds. Treasures you won’t see in big box stores.</span>
-      <a href="https://memory-movers-nj.myshopify.com/" target="_blank" class="banner-btn">
+      <a href="https://memory-movers-nj.myshopify.com/" target="_blank" rel="noopener noreferrer" class="banner-btn">
         Want to shop items? &rarr;
       </a>
     </div>
@@ -22,43 +23,48 @@
     </button>
   </div>
 
-  <nav class="navbar">
+  <header>
+  <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
       <div class="nav-brand">
-        <img src="assets/images/logo.svg" alt="Memory Movers NJ Logo" width="80" height="80" />
+        <a href="index.html">
+          <img src="assets/images/logo.svg" alt="Memory Movers NJ - Home" width="80" height="80" />
+        </a>
       </div>
-      
-      <ul class="nav-menu">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#featured-services">Services</a></li>
-        <li><a href="https://memory-movers-nj.myshopify.com/" target="_blank">Shop Items</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li class="nav-dropdown">
-          <a href="#" class="dropdown-toggle">Resources</a>
-          <ul class="dropdown-menu">
-            <li><a href="recycle-resell-remove.html">Recycle / Resell / Remove</a></li>
-            <li><a href="donations.html">Donation Locations</a></li>
+
+      <ul class="nav-menu" id="main-nav" role="menubar">
+        <li role="none"><a href="#hero" role="menuitem">Home</a></li>
+        <li role="none"><a href="#featured-services" role="menuitem">Services</a></li>
+        <li role="none"><a href="https://memory-movers-nj.myshopify.com/" target="_blank" rel="noopener noreferrer" role="menuitem">Shop Items<span class="sr-only"> (opens in new tab)</span></a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
+        <li class="nav-dropdown" role="none">
+          <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Resources</a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="none"><a href="recycle-resell-remove.html" role="menuitem">Recycle / Resell / Remove</a></li>
+            <li role="none"><a href="donations.html" role="menuitem">Donation Locations</a></li>
           </ul>
         </li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#footer">Contact</a></li>
+        <li role="none"><a href="#reviews" role="menuitem">Reviews</a></li>
+        <li role="none"><a href="#footer" role="menuitem">Contact</a></li>
       </ul>
-      
-      <div class="nav-toggle">
+
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-      </div>
+      </button>
     </div>
   </nav>
+  </header>
 
+  <main id="main-content">
   <section id="hero" class="split">
     <div class="container">
       <div class="hero-content">
         <div class="copy">
           <h1>Clearing Space, Finding Meaning</h1>
-          <h3>Helping people declutter, downsize, and sell unwanted items — making life simpler, more organized, and less overwhelming.</h3>
+          <p class="hero-subtitle">Helping people declutter, downsize, and sell unwanted items — making life simpler, more organized, and less overwhelming.</p>
           <div class="btn-row">
             <a href="#footer" class="btn outline">GET STARTED</a>
             <a href="#featured-services" class="btn outline">OUR SERVICES</a>
@@ -73,7 +79,7 @@
 
   <section id="value-prop" class="centered">
     <div class="container">
-      <h3>Garages, storage units, and basements often start as temporary holding spaces — but over time, they turn into forgotten repositories of things we don't even remember we have.</h3>
+      <h2 class="h3">Garages, storage units, and basements often start as temporary holding spaces — but over time, they turn into forgotten repositories of things we don't even remember we have.</h2>
       <p>I love diving into these spaces — sorting, clearing, and uncovering the stories behind the stuff. My passion is helping people reconnect with what matters and let go of what doesn't.</p>
       <p>Whether it's finding the treasures you want to keep, sharing meaningful items with your family, or selling things to someone who will truly value them, I am here to help. My goal is simple: to make sure your things are loved and cherished, whether by you, your loved ones, or a new owner who will appreciate them.</p>
       <a href="#featured-services" class="btn ghost">GET STARTED</a>
@@ -83,7 +89,7 @@
   <section id="what-i-do" class="dark">
     <div class="container">
       <div class="services-intro">
-        <h3>What I Do</h3>
+        <h2 class="h3">What I Do</h2>
         <div class="services-description">
           <p class="lead">I help families thoughtfully downsize and give beautiful home furnishings a second life. Instead of sending quality pieces to landfills, I curate, clean, and rehome antiques, vintage décor, and everyday treasures so they can be loved again.</p>
           <p>Many of my items come from local homes and seniors transitioning to smaller spaces — each piece has a story, history, and plenty of life left in it.</p>
@@ -118,7 +124,7 @@
   <section id="featured-services" class="dark">
     <div class="container">
       <div class="services-intro">      
-      <h3 class="pricing-heading">Services & Pricing</h3>
+      <h2 class="h3 pricing-heading">Services & Pricing</h2>
       <div class="card-grid">
         <article class="card">
           <img src="assets/images/services-1-organizing.webp" alt="Items ready for consignment pickup" />
@@ -165,47 +171,49 @@
           </div>
         </article>
       </div>
+      </div>
     </div>
   </section>
 
   <section id="pricing">
     <div class="container">
-      <h3>Service & Pricing Comparison</h3>
+      <h2 class="h3">Service & Pricing Comparison</h2>
       <div class="pricing-table">
         <table>
+          <caption class="sr-only">Comparison of Memory Movers NJ service options, pricing, and what is included</caption>
           <thead>
             <tr>
-              <th>Service</th>
-              <th>Best For</th>
-              <th>Pricing</th>
-              <th>Sales Split</th>
-              <th>What's Included</th>
+              <th scope="col">Service</th>
+              <th scope="col">Best For</th>
+              <th scope="col">Pricing</th>
+              <th scope="col">Sales Split</th>
+              <th scope="col">What's Included</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Consignment Pickup</strong></td>
+              <th scope="row">Consignment Pickup</th>
               <td data-label="Best For">Items already sorted & ready to sell</td>
               <td data-label="Pricing">No upfront fee</td>
               <td data-label="Sales Split">50/50 for 3 months</td>
               <td data-label="What's Included">Pickup, selling, and payout</td>
             </tr>
             <tr>
-              <td><strong>Clean Out / Clear Out</strong></td>
+              <th scope="row">Clean Out / Clear Out</th>
               <td data-label="Best For">Storage units, garages, cluttered spaces</td>
               <td data-label="Pricing">$65/hr</td>
               <td data-label="Sales Split">50/50 on saleable items</td>
               <td data-label="What's Included">Sorting, hauling, selling, donations/disposal</td>
             </tr>
             <tr>
-              <td><strong>Consultative Decluttering</strong></td>
+              <th scope="row">Consultative Decluttering</th>
               <td data-label="Best For">Those who want to be involved in decisions</td>
               <td data-label="Pricing">$95/hr</td>
               <td data-label="Sales Split">50/50 on saleable items</td>
               <td data-label="What's Included">Room-by-room guidance, organization, donation/sales help</td>
             </tr>
             <tr>
-              <td><strong>Estate Sales</strong></td>
+              <th scope="row">Estate Sales</th>
               <td data-label="Best For">Whole homes, estates, large downsizing projects</td>
               <td data-label="Pricing">$1 per sq. ft. (deducted from sales)</td>
               <td data-label="Sales Split">35/65 on proceeds</td>
@@ -224,7 +232,7 @@
           <img src="assets/images/about-gwen.webp" alt="Gwen Beslow, founder of Memory Movers NJ" />
         </div>
         <div class="about-text">
-          <h3>About Gwen</h3>
+          <h2 class="h3">About Gwen</h2>
           <div class="about-bio">
             <p>Hi, I'm Gwen.</p>
             <p>Originally from Alabama, I've called New Jersey home for nearly 20 years. My background is in corporate Human Resources, where I spent my career helping others navigate change and make meaningful decisions. That same passion for helping people is at the heart of what I do today.</p>
@@ -241,9 +249,10 @@
 
   <section id="reviews">
     <div class="container">
-      <h3>What Our Clients Say</h3>
+      <h2 class="h3">What Our Clients Say</h2>
       
-      <div class="reviews-carousel">
+      <div class="reviews-carousel" role="region" aria-label="Client reviews" aria-roledescription="carousel">
+        <div aria-live="polite" aria-atomic="true" class="sr-only" id="carousel-status"></div>
         <div class="carousel-container">
           <div class="reviews-track">
             
@@ -337,24 +346,24 @@
     </div>
     <div class="container">
       <div class="overlay-card">
-        <h3>Free Home &<br>Belongings Assessment</h3>
+        <h2 class="h3">Free Home &<br>Belongings Assessment</h2>
         <p>We'll walk your space, discuss goals, flag safety risks, and create a timeline you're comfortable with—no pressure, no obligation.</p>
-        <a href="#" class="btn outline light">CONTACT US</a>
+        <a href="#footer" class="btn outline light">CONTACT US</a>
       </div>
     </div>
   </section>
 
   <section id="faq">
     <div class="container">
-      <h3>Frequently Asked Questions</h3>
+      <h2 class="h3">Frequently Asked Questions</h2>
       
       <div class="faq-accordion">
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
             <span>What services do you offer?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-1" role="region" aria-labelledby="faq-btn-1">
             <div class="faq-answer">
               <p>I offer four main services: <strong>Consignment Pickup</strong> (for items ready to sell), <strong>Clean Out/Clear Out</strong> (for storage units and garages), <strong>Consultative Decluttering</strong> (working side by side), and <strong>Estate Sales</strong> (full-service sales for whole homes). Each service includes selling items and splitting proceeds 50/50, except estate sales which are 35/65.</p>
             </div>
@@ -362,11 +371,11 @@
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
             <span>How much do your services cost?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-2" role="region" aria-labelledby="faq-btn-2">
             <div class="faq-answer">
               <p><strong>Consignment Pickup:</strong> No upfront fee, 50/50 split on sales<br>
               <strong>Clean Out/Clear Out:</strong> $65/hour + 50/50 split on sales<br>
@@ -377,11 +386,11 @@
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
             <span>Do you offer a free consultation?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-3" role="region" aria-labelledby="faq-btn-3">
             <div class="faq-answer">
               <p>Yes! I offer a free home and belongings assessment where we'll walk your space, discuss your goals, flag any safety risks, and create a timeline you're comfortable with. There's no pressure and no obligation.</p>
             </div>
@@ -389,11 +398,11 @@
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
             <span>What happens to items that don't sell?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-4" role="region" aria-labelledby="faq-btn-4">
             <div class="faq-answer">
               <p>I believe nothing should go to waste unnecessarily. Items that don't sell are donated to appropriate organizations, recycled through proper channels, or disposed of responsibly. I maintain extensive lists of local donation centers and recycling programs in New Jersey to ensure your belongings find new homes where they'll be appreciated.</p>
             </div>
@@ -401,11 +410,11 @@
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">
             <span>How long does the process take?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-5" role="region" aria-labelledby="faq-btn-5">
             <div class="faq-answer">
               <p>The timeline depends on your needs and comfort level. I work at your pace—this process can be emotional, and I respect that. Some clients prefer to work a few hours at a time over several months, while others want to tackle everything quickly. We'll create a timeline during your free assessment that feels right for you.</p>
             </div>
@@ -413,11 +422,11 @@
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-6" id="faq-btn-6">
             <span>What areas do you serve?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-6" role="region" aria-labelledby="faq-btn-6">
             <div class="faq-answer">
               <p>I serve New Jersey and surrounding areas. Having lived in New Jersey for nearly 20 years, I have extensive knowledge of local donation centers, recycling programs, and resale opportunities throughout the region.</p>
             </div>
@@ -425,11 +434,11 @@
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-7" id="faq-btn-7">
             <span>Will you judge me for the state of my space?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-7" role="region" aria-labelledby="faq-btn-7">
             <div class="faq-answer">
               <p>Absolutely not. I understand that everyone's situation is unique, and there's no shame in needing help organizing your space. We all accumulate things over time. My approach is completely judgment-free and compassionate—I'm here to help, not to judge.</p>
             </div>
@@ -437,11 +446,11 @@
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
+          <button class="accordion-header" aria-expanded="false" aria-controls="faq-8" id="faq-btn-8">
             <span>How do you handle sentimental items?</span>
-            <span class="accordion-icon">+</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
-          <div class="accordion-content">
+          <div class="accordion-content" id="faq-8" role="region" aria-labelledby="faq-btn-8">
             <div class="faq-answer">
               <p>I understand that it's not the objects themselves that matter most—it's the memories they hold. I help you identify what truly matters and find meaningful ways to preserve those memories. We work together to decide what to keep, what to share with family, and what to let go of, always honoring the stories behind your belongings.</p>
             </div>
@@ -450,6 +459,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer id="footer">
     <div class="container">
@@ -505,13 +516,13 @@
         </div>
       </div>
       <div class="footer-nav">
-        <nav class="footer-navigation">
+        <nav class="footer-navigation" aria-label="Footer navigation">
           <div class="footer-nav-column">
             <h4>Navigation</h4>
             <ul>
               <li><a href="#hero">Home</a></li>
               <li><a href="#featured-services">Services</a></li>
-              <li><a href="https://memory-movers-nj.myshopify.com/" target="_blank">Shop Items</a></li>
+              <li><a href="https://memory-movers-nj.myshopify.com/" target="_blank" rel="noopener noreferrer">Shop Items<span class="sr-only"> (opens in new tab)</span></a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="#faq">FAQ</a></li>
               <li><a href="#reviews">Reviews</a></li>
@@ -522,6 +533,8 @@
             <ul>
               <li><a href="recycle-resell-remove.html">Recycle / Resell / Remove</a></li>
               <li><a href="donations.html">Donation Locations</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+              <li><a href="mailto:gwen@memorymoversnj.com">Report Accessibility Issue</a></li>
             </ul>
           </div>
         </nav>
