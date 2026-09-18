@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($css = Get-Content \"styles.css\" -Raw; $open = \\([regex]::Matches\\($css, '\\\\{'\\)\\).Count; $close = \\([regex]::Matches\\($css, '\\\\}'\\)\\).Count; Write-Output \"open braces: $open / close braces: $close\"; git diff --stat)",
+      "PowerShell(Start-Process -WindowStyle Hidden python -ArgumentList \"-m\",\"http.server\",\"8043\" -WorkingDirectory \"C:\\\\Users\\\\Ian Moreno\\\\Projects\\\\memory-movers-nj\"; $ok=$false; foreach\\($i in 1..15\\){ try { $r=Invoke-WebRequest -Uri \"http://localhost:8043/index.html\" -UseBasicParsing -TimeoutSec 2; if\\($r.StatusCode -eq 200\\){$ok=$true; break} } catch { Start-Sleep -Milliseconds 500 } }; Write-Output \"server ok: $ok\"; try { Write-Output \"chromium-cli: $\\(\\(Get-Command chromium-cli -ErrorAction Stop\\).Source\\)\" } catch { Write-Output \"chromium-cli: NOT FOUND\" })",
+      "PowerShell($paths = @\\(\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\", \"C:\\\\Program Files \\(x86\\)\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\", \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\", \"C:\\\\Program Files\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\"\\); foreach\\($p in $paths\\){ if\\(Test-Path $p\\){ Write-Output \"FOUND: $p\" } })",
+      "PowerShell($chrome = \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\"; $out = \"C:\\\\Users\\\\IANMOR~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Ian-Moreno-Projects-memory-movers-nj\\\\7f568a2a-23a6-425c-a00c-38a2f25a5f9f\\\\scratchpad\"; Test-Path $out; Start-Process -FilePath $chrome -ArgumentList '--headless=new','--disable-gpu','--hide-scrollbars','--force-device-scale-factor=1','--virtual-time-budget=6000','--window-size=390,8600',\"--screenshot=`\"$out\\\\index-mobile.png`\"\",\"http://localhost:8043/index.html\" -Wait -NoNewWindow; Get-ChildItem $out | Select-Object Name, Length)"
+    ]
+  }
+}
