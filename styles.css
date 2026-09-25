@@ -619,6 +619,14 @@ h4 {
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: transform 160ms ease, box-shadow 160ms ease;
+  /* Uniform tile. Source photos are portrait phone shots of varying
+     ratios, so they fill the tile and crop rather than stretch. */
+  aspect-ratio: 3 / 4;
+}
+
+/* Groups whose photos are landscape (4:3) get a matching tile. */
+.process-images.ratio-landscape .process-image {
+  aspect-ratio: 4 / 3;
 }
 
 .process-image:hover {
@@ -628,9 +636,18 @@ h4 {
 
 .process-image img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Per-photo framing, for shots where a centered crop clips the subject. */
+.process-image.focus-top img {
+  object-position: 50% 20%;
+}
+
+.process-image.focus-bottom img {
+  object-position: 50% 100%;
 }
 
 .process-label {
@@ -1615,12 +1632,6 @@ a:focus {
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .process-image img {
-    height: 240px;
-    width: 100%;
-    object-fit: cover;
   }
 
   /* Typography scaling */
