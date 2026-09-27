@@ -8,6 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1836611');
+  </script>
+  <!-- End MailerLite Universal -->
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to Main Content</a>
@@ -23,6 +32,14 @@
       </a>
     </div>
     <button id="close-banner" class="banner-close" aria-label="Close banner">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+  <div id="estate-sale-banner" class="promo-banner promo-banner--blue" role="complementary" aria-label="Upcoming estate sale">
+    <div class="banner-content">
+      <span class="banner-text">My next estate sale is <strong>Oct 9&ndash;11 in Bernardsville</strong>&hellip; address to be listed the night before.</span>
+    </div>
+    <button id="close-estate-sale-banner" class="banner-close" aria-label="Close estate sale banner">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
   </div>
@@ -87,6 +104,14 @@
       <p>I love diving into these spaces — sorting, clearing, and uncovering the stories behind the stuff. My passion is helping people reconnect with what matters and let go of what doesn't.</p>
       <p>Whether it's finding the treasures you want to keep, sharing meaningful items with your family, or selling things to someone who will truly value them, I am here to help. My goal is simple: to make sure your things are loved and cherished, whether by you, your loved ones, or a new owner who will appreciate them.</p>
       <a href="#featured-services" class="btn ghost">GET STARTED</a>
+    </div>
+  </section>
+
+  <section id="mailing-list" aria-labelledby="mailing-list-heading">
+    <div class="container">
+      <h2 id="mailing-list-heading" class="h3">Be the first to know about upcoming estate sales</h2>
+      <p>Join the mailing list for sale dates, locations, and special finds.</p>
+      <button type="button" class="btn ml-onclick-form" onclick="ml('show', 'qZ7Shs', true)">JOIN THE MAILING LIST</button>
     </div>
   </section>
 
@@ -725,21 +750,27 @@
       });
       
       // Banner Logic
-      const banner = document.getElementById('promo-banner');
-      const closeBannerBtn = document.getElementById('close-banner');
+      function setupBanner(bannerId, closeBtnId, storageKey) {
+        const banner = document.getElementById(bannerId);
+        const closeBannerBtn = document.getElementById(closeBtnId);
+        if (!banner) return;
 
-      // Check if user previously closed the banner in this session
-      if (sessionStorage.getItem('bannerClosed') === 'true') {
-        banner.style.display = 'none';
-      }
-
-      if (closeBannerBtn) {
-        closeBannerBtn.addEventListener('click', function() {
+        // Check if user previously closed the banner in this session
+        if (sessionStorage.getItem(storageKey) === 'true') {
           banner.style.display = 'none';
-          // Save preference to session storage
-          sessionStorage.setItem('bannerClosed', 'true');
-        });
+        }
+
+        if (closeBannerBtn) {
+          closeBannerBtn.addEventListener('click', function() {
+            banner.style.display = 'none';
+            // Save preference to session storage
+            sessionStorage.setItem(storageKey, 'true');
+          });
+        }
       }
+
+      setupBanner('promo-banner', 'close-banner', 'bannerClosed');
+      setupBanner('estate-sale-banner', 'close-estate-sale-banner', 'estateSaleBannerClosed');
     });
   </script>
 </body>

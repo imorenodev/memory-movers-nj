@@ -420,6 +420,26 @@ h4 {
   margin-bottom: 16px;
 }
 
+/* Mailing List CTA */
+#mailing-list {
+  background: var(--sand);
+  padding: var(--space-section) 0;
+  text-align: center;
+}
+
+#mailing-list .container {
+  max-width: 760px;
+}
+
+#mailing-list h2 {
+  margin-bottom: 16px;
+}
+
+#mailing-list p {
+  color: var(--ash);
+  margin-bottom: 24px;
+}
+
 /* Feature Split */
 #feature-split {
   display: grid;
@@ -2408,6 +2428,11 @@ a:focus {
   font-size: 14px;
   box-shadow: var(--shadow-sm);
   transition: margin-top 0.3s ease;
+}
+
+.promo-banner--blue {
+  background: #0077c2;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .promo-banner.hidden {
