@@ -11,19 +11,19 @@
 /* Design Tokens */
 :root {
   /* Colors */
-  --ivory: #F5F2ED;
+  --ivory: #EAF8F7;
   --paper: #FFFFFF;
-  --sand: #EAE4DE;
-  --beige: #CDB7A7;
+  --sand: #D6F2F0;
+  --beige: #81D8D0;
   --bronze: #9A6A55;
   --bronze-700: #7E5643;
   --ash: #67635F;
   --graphite: #3A3A3A;
   --charcoal: #1E1E1E;
-  --line: #DDD5CD;
-  --panel: #CAB6A6;
+  --line: #BFEBE7;
+  --panel: #93DDD7;
   --shadow: rgba(0,0,0,.08);
-  --linen: #F0EAE2;
+  --linen: #DDF5F2;
 
   /* Radius */
   --radius: 8px;
@@ -182,7 +182,7 @@ h4 {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(245, 242, 237, 0.95);
+  background: rgba(234, 248, 247, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   padding: 8px 0;
@@ -207,7 +207,7 @@ h4 {
 }
 
 .nav-brand img {
-  width: 64px;
+  width: auto;
   height: 64px;
 }
 
@@ -1574,7 +1574,7 @@ a:focus {
   }
   
   .nav-brand img {
-    width: 56px;
+    width: auto;
     height: 56px;
   }
   
