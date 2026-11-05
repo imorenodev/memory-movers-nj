@@ -15,8 +15,8 @@
   --paper: #FFFFFF;
   --sand: #D6F2F0;
   --beige: #81D8D0;
-  --bronze: #9A6A55;
-  --bronze-700: #7E5643;
+  --bronze: #81D8D0;
+  --bronze-700: #5ECDC3;
   --ash: #67635F;
   --graphite: #3A3A3A;
   --charcoal: #1E1E1E;
@@ -86,7 +86,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--serif);
   font-weight: 500;
-  color: var(--bronze);
+  color: var(--charcoal);
   line-height: 1.1;
 }
 
@@ -109,7 +109,7 @@ h3 {
 h4 {
   font-size: 20px;
   line-height: 28px;
-  color: var(--bronze-700);
+  color: var(--charcoal);
 }
 
 /* Utility Classes */
@@ -156,7 +156,7 @@ h4 {
 .btn:hover {
   background-color: var(--bronze-700);
   border-color: var(--bronze-700);
-  color: var(--paper);
+  color: var(--charcoal);
 }
 
 .btn.ghost {
@@ -172,7 +172,7 @@ h4 {
 .btn.light:hover {
   background-color: var(--bronze-700);
   border-color: var(--bronze-700);
-  color: var(--paper);
+  color: var(--charcoal);
 }
 
 /* Navbar */
@@ -412,7 +412,7 @@ h4 {
 
 #value-prop h3 {
   margin-bottom: 16px;
-  color: var(--bronze); 
+  color: var(--charcoal); 
 }
 
 #value-prop p {
@@ -482,7 +482,7 @@ h4 {
   height: 40px;
   border-radius: 50%;
   background: var(--bronze);
-  color: var(--paper);
+  color: var(--charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -525,7 +525,7 @@ h4 {
 }
 
 #featured-services h3 {
-  color: var(--bronze);
+  color: var(--charcoal);
   margin-bottom: 48px;
 }
 
@@ -535,7 +535,7 @@ h4 {
 }
 
 #what-i-do h3 {
-  color: var(--bronze);
+  color: var(--charcoal);
   margin-bottom: 48px;
 }
 
@@ -591,7 +591,7 @@ h4 {
 }
 
 .services-intro h3 {
-  color: var(--bronze);
+  color: var(--charcoal);
   margin-bottom: 32px;
 }
 
@@ -823,7 +823,7 @@ h4 {
 #faq h3 {
   text-align: center;
   margin-bottom: 48px;
-  color: var(--bronze);
+  color: var(--charcoal);
 }
 
 .faq-accordion {
@@ -958,7 +958,7 @@ h4 {
 .carousel-btn:hover,
 .carousel-btn:focus {
   background: var(--bronze);
-  color: var(--paper);
+  color: var(--charcoal);
   outline: none;
   transform: scale(1.05);
 }
@@ -1023,7 +1023,7 @@ h4 {
 
 .pricing-table th {
   background: var(--bronze);
-  color: var(--paper);
+  color: var(--charcoal);
   font-family: var(--sans);
   font-size: var(--small-size);
   font-weight: 600;
@@ -1742,7 +1742,7 @@ a:focus {
 #feature-split.plan-carousel .step-number.is-active,
 #feature-split.plan-carousel .step-number[aria-selected="true"]{
   background: var(--bronze);
-  color: #fff;
+  color: var(--charcoal);
   border-color: var(--bronze);
   box-shadow: 0 0 0 3px rgba(154,106,85,.22);
 }
@@ -1866,7 +1866,7 @@ a:focus {
 }
 
 .resource-category h4 {
-  color: var(--bronze-700);
+  color: var(--charcoal);
   margin-bottom: 20px;
   font-family: var(--serif);
   font-size: 22px;
@@ -1936,7 +1936,7 @@ a:focus {
 }
 
 .donation-category h3 {
-  color: var(--bronze);
+  color: var(--charcoal);
   margin-bottom: 24px;
   font-size: 24px;
 }
@@ -1954,7 +1954,7 @@ a:focus {
 }
 
 .donation-item h4 {
-  color: var(--bronze-700);
+  color: var(--charcoal);
   margin-bottom: 12px;
   font-size: 18px;
 }
@@ -2225,7 +2225,7 @@ a:focus {
 }
 
 .philosophy-item h4 {
-  color: var(--bronze-700);
+  color: var(--charcoal);
   font-family: var(--serif);
   font-size: 20px;
   margin-bottom: 16px;
@@ -2252,7 +2252,7 @@ a:focus {
 }
 
 .credential-item h4 {
-  color: var(--bronze-700);
+  color: var(--charcoal);
   font-family: var(--serif);
   font-size: 20px;
   margin-bottom: 12px;
@@ -2419,7 +2419,7 @@ a:focus {
 .promo-banner {
   /* We use your bronze variables for a rich, warm gradient */
   background: linear-gradient(to right, var(--bronze), var(--bronze-700)); 
-  color: var(--paper);
+  color: var(--charcoal);
   padding: 12px 40px 12px 20px;
   position: relative;
   width: 100%;
@@ -2493,7 +2493,7 @@ a:focus {
 }
 
 .banner-close:hover {
-  color: var(--paper);
+  color: var(--charcoal);
 }
 
 /* Mobile Adjustments */
@@ -2573,7 +2573,7 @@ h2.h3 {
   font-size: var(--h3-size);
   line-height: var(--h3-line);
   font-weight: 500;
-  color: var(--bronze);
+  color: var(--charcoal);
 }
 
 /* Scroll padding to prevent sticky header from obscuring focused elements */
